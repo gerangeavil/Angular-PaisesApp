@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HtmlParser } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Country } from '../interfaces/paises.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class PaisesService {
 
   constructor(private http: HttpClient) { }
 
-  buscarPais(termino: string): Observable<any> {
+  buscarPais(termino: string): Observable<Country> {
     const url = this.apiUrl + '/name/' + termino;
-    return this.http.get(url);
+    return this.http.get<Country>(url);
   }
 }

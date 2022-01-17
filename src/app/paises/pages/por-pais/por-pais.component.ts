@@ -17,19 +17,11 @@ export class PorPaisComponent {
 
   buscar() {
     this.hayError = false;
-    console.log(this.termino);
-    this.paisesService.buscarPais(this.termino).subscribe((res) => {
-
-      // if (res.status == '404') {
-      //   console.log('Error', res.status);
-      //   this.hayError = true;
-      // } else {
-      console.log(res);
-      // }
+    this.paisesService.buscarPais(this.termino).subscribe((paises) => {
+      console.log(paises);
     }, (err) => {
       console.log('Error', err);
       this.hayError = true;
     });
-
   }
 }
