@@ -8,6 +8,7 @@ import { PorPaisComponent } from './pages/por-pais/por-pais.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { PaisesTablaComponent } from './components/paises-tabla/paises-tabla.component';
+import { PaisesInputComponent } from './components/paises-input/paises-input.component';
 
 
 
@@ -17,7 +18,8 @@ import { PaisesTablaComponent } from './components/paises-tabla/paises-tabla.com
     PorPaisComponent,
     PorRegionComponent,
     VerPaisComponent,
-    PaisesTablaComponent
+    PaisesTablaComponent,
+    PaisesInputComponent
   ],
   exports: [
     PorCapitalComponent,
