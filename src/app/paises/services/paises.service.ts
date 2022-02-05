@@ -1,5 +1,4 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { HtmlParser } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Country } from '../interfaces/paises.interface';
