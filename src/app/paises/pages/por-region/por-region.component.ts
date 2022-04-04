@@ -11,6 +11,7 @@ import { PaisesService } from '../../services/paises.service';
 export class PorRegionComponent {
   regiones: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
   regionActiva: string = '';
+  paises: Country[] = [];
 
   constructor(
     private paisesService: PaisesService
@@ -21,6 +22,19 @@ export class PorRegionComponent {
   }
 
   activarRegion(region: string) {
+    if (region === this.regionActiva) {
+      return;
+    }
+
     this.regionActiva = region;
+    this.paises = [];
+
+    this.paisesService.buscarRegion(region).subscribe((paises) => {
+      this.paises = paises;
+      console.log(paises);
+    }, error => {
+      console.error(error);
+      this.paises = [];
+    });
   }
 }
